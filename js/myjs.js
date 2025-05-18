@@ -172,7 +172,7 @@ function viewtable(){
     }
     document.getElementById('ave_c').innerHTML = ave_c+"回";
     document.getElementById('max_c').innerHTML = Math.max(renz,renz_t)+"回";
-    document.getElementById('win_p').innerHTML = win_p+"%";
+
     document.getElementById('win_t').innerHTML = Math.max(renw,renw_t)+"回";
     document.getElementById('sev_p').innerHTML = Math.round((t7/(w7+t7))*100)+"%";
 
