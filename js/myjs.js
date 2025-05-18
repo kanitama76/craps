@@ -533,7 +533,7 @@ let allNames = [];
 let selectedNames = [];
 
 // モーダルを開く
-async function playerchoise() {
+async function playerchoice() {
   if (allNames.length === 0) {
     const res = await fetch(apiUrl);
     const data = await res.json();
