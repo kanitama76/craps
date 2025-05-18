@@ -531,7 +531,7 @@ function rest(){
 const apiUrl = 'https://script.google.com/macros/s/AKfycbzWrIr_fTJ-e-L6ScdgKcl8THOSGqWbTKeE2oUAKvlaovxHQqzr2Bsj8XEUyodZfNjR/exec'; // ← あなたのGoogle Apps Script URLに差し替え
 let allNames = [];
 let selectedNames = [];
-async function playerchoise() {
+async function playerchoice() {
     // 初回のみAPIから取得
     if (allNames.length === 0) {
         const res = await fetch(apiUrl);
