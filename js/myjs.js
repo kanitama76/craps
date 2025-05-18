@@ -531,55 +531,54 @@ function rest(){
 const apiUrl = 'https://script.google.com/macros/s/AKfycbzWrIr_fTJ-e-L6ScdgKcl8THOSGqWbTKeE2oUAKvlaovxHQqzr2Bsj8XEUyodZfNjR/exec'; // ← あなたのGoogle Apps Script URLに差し替え
 let allNames = [];
 let selectedNames = [];
-async function playerchoice() {
-    // 初回のみAPIから取得
-    if (allNames.length === 0) {
-        const res = await fetch(apiUrl);
-        const data = await res.json();
-        allNames = data.map(row => row["名前"]); // 列名が「名前」の場合
-    }
 
-    // 選択ダイアログを生成
-    const nameList = allNames.map(name => {
-        const checked = selectedNames.includes(name) ? 'checked' : '';
-        return `<label><input type="checkbox" value="${name}" ${checked}> ${name}</label><br>`;
-    }).join('');
+// モーダルを開く
+async function playerchoise() {
+  if (allNames.length === 0) {
+    const res = await fetch(apiUrl);
+    const data = await res.json();
+    allNames = data.map(row => row["名前"]);
+  }
 
-    const container = document.createElement('div');
-    container.innerHTML = `
-        <div style="padding:10px;">
-            <p>最大6名まで選択可能</p>
-            ${nameList}
-        </div>
+  const container = document.getElementById("playerModalBody");
+  container.innerHTML = "";
+
+  allNames.forEach(name => {
+    const isChecked = selectedNames.includes(name) ? "checked" : "";
+    const item = document.createElement("div");
+    item.classList.add("form-check");
+    item.innerHTML = `
+      <input class="form-check-input" type="checkbox" value="${name}" id="chk_${name}" ${isChecked}>
+      <label class="form-check-label" for="chk_${name}">${name}</label>
     `;
+    item.querySelector("input").addEventListener("change", () => {
+      const checked = container.querySelectorAll("input:checked");
+      if (checked.length > 6) {
+        item.querySelector("input").checked = false;
+        alert("最大6人まで選択できます。");
+      }
+    });
+    container.appendChild(item);
+  });
 
-    const wrapper = document.createElement('div');
-    wrapper.appendChild(container);
-
-    // 表示（シンプルなconfirm代替UI）
-    const dialog = window.open('', '', 'width=400,height=600');
-    dialog.document.write(`<html><head><title>プレイヤー選択</title></head><body>${container.innerHTML}
-        <button onclick="window.opener.saveSelectionFromPopup(this)">OK</button>
-        </body></html>`);
+  // モーダル表示（Bootstrap 5）
+  const modal = new bootstrap.Modal(document.getElementById('playerModal'));
+  modal.show();
 }
 
-// 選択確定（ポップアップから呼ばれる）
-function saveSelectionFromPopup(button) {
-    const checkboxes = button.parentElement.querySelectorAll('input[type="checkbox"]:checked');
-    if (checkboxes.length > 6) {
-        alert('6人まで選択してください');
-        return;
+// 決定ボタンで呼ばれる
+function confirmSelection() {
+  const checkboxes = document.querySelectorAll("#playerModalBody input:checked");
+  selectedNames = Array.from(checkboxes).map(cb => cb.value);
+
+  for (let i = 0; i < 4; i++) {
+    const label = document.getElementById(`playerLabel${i}`);
+    if (label) {
+      label.textContent = selectedNames[i] || `Player ${String.fromCharCode(65 + i)}`;
     }
+  }
 
-    selectedNames = Array.from(checkboxes).map(cb => cb.value);
-
-    // ラベル更新（最大4人分）
-    for (let i = 0; i < 4; i++) {
-        const label = document.getElementById(`playerLabel${i}`);
-        if (label) {
-            label.textContent = selectedNames[i] || `Player ${String.fromCharCode(65 + i)}`;
-        }
-    }
-
-    window.close();
+  // モーダルを閉じる
+  const modalElement = bootstrap.Modal.getInstance(document.getElementById('playerModal'));
+  modalElement.hide();
 }
