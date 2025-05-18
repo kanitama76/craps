@@ -308,6 +308,22 @@
           </div>
         </div>
       </div>
+    <div class="modal fade" id="playerModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">プレイヤーを選択（最大6人）</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="閉じる"></button>
+      </div>
+      <div class="modal-body" id="playerModalBody">
+        <!-- チェックボックスリストをここに生成 -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" onclick="confirmSelection()">決定</button>
+      </div>
+    </div>
+  </div>
+</div>
 
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
