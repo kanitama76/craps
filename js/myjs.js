@@ -527,3 +527,59 @@ function rest(){
     }
 
 }
+
+const apiUrl = 'https://script.google.com/macros/s/AKfycbzWrIr_fTJ-e-L6ScdgKcl8THOSGqWbTKeE2oUAKvlaovxHQqzr2Bsj8XEUyodZfNjR/exec'; // ← あなたのGoogle Apps Script URLに差し替え
+let allNames = [];
+let selectedNames = [];
+async function playerchoise() {
+    // 初回のみAPIから取得
+    if (allNames.length === 0) {
+        const res = await fetch(apiUrl);
+        const data = await res.json();
+        allNames = data.map(row => row["名前"]); // 列名が「名前」の場合
+    }
+
+    // 選択ダイアログを生成
+    const nameList = allNames.map(name => {
+        const checked = selectedNames.includes(name) ? 'checked' : '';
+        return `<label><input type="checkbox" value="${name}" ${checked}> ${name}</label><br>`;
+    }).join('');
+
+    const container = document.createElement('div');
+    container.innerHTML = `
+        <div style="padding:10px;">
+            <p>最大6名まで選択可能</p>
+            ${nameList}
+        </div>
+    `;
+
+    const wrapper = document.createElement('div');
+    wrapper.appendChild(container);
+
+    // 表示（シンプルなconfirm代替UI）
+    const dialog = window.open('', '', 'width=400,height=600');
+    dialog.document.write(`<html><head><title>プレイヤー選択</title></head><body>${container.innerHTML}
+        <button onclick="window.opener.saveSelectionFromPopup(this)">OK</button>
+        </body></html>`);
+}
+
+// 選択確定（ポップアップから呼ばれる）
+function saveSelectionFromPopup(button) {
+    const checkboxes = button.parentElement.querySelectorAll('input[type="checkbox"]:checked');
+    if (checkboxes.length > 6) {
+        alert('6人まで選択してください');
+        return;
+    }
+
+    selectedNames = Array.from(checkboxes).map(cb => cb.value);
+
+    // ラベル更新（最大4人分）
+    for (let i = 0; i < 4; i++) {
+        const label = document.getElementById(`playerLabel${i}`);
+        if (label) {
+            label.textContent = selectedNames[i] || `Player ${String.fromCharCode(65 + i)}`;
+        }
+    }
+
+    window.close();
+}
