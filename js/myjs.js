@@ -188,18 +188,18 @@ function back(){
 function getimg(scr,hrdck,pntn){
     switch(scr){
         case 2:
-            return '<img src="./src/2.png"　class="scrimg"></img>';
+            return '<img src="./src/2.png" class="scrimg"></img>';
         case 3:
-            return '<img src="./src/3.png" width="90%" height="90%" class="scrimg"></img>';
+            return '<img src="./src/3.png" class="scrimg"></img>';
         case 4:
             if(hrdck==true && pntn==4){
-                return '<img src="./src/hw4.png" width="85%" height="85%" class="scrimg"></img>';
+                return '<img src="./src/hw4.png" class="scrimg"></img>';
             }else if(pntn==4){
-                return '<img src="./src/w4.png" width="85%" height="85%" class="scrimg"></img>';
+                return '<img src="./src/w4.png" class="scrimg"></img>';
             }else if(hrdck==true){
-                return '<img src="./src/h4.png" width="85%" height="85%" class="scrimg"></img>';
+                return '<img src="./src/h4.png" class="scrimg"></img>';
             }
-            return '<img src="./src/4.png" width="80%" height="80%" class="scrimg"></img>';
+            return '<img src="./src/4.png" class="scrimg"></img>';
         case 5:
             if(pntn==5){
                 return '<img src="./src/w5.png" class="scrimg"></img>';
