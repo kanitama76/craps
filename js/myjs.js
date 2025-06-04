@@ -188,7 +188,7 @@ function back(){
 function getimg(scr,hrdck,pntn){
     switch(scr){
         case 2:
-            return '<img src="./src/2.png" width="90%" height="90%"　class="scrimg"></img>';
+            return '<img src="./src/2.png"　class="scrimg"></img>';
         case 3:
             return '<img src="./src/3.png" width="90%" height="90%" class="scrimg"></img>';
         case 4:
