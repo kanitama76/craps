@@ -193,11 +193,11 @@ function getimg(scr,hrdck,pntn){
             return '<img src="./src/3.png" width="90%" height="90%" class="scrimg"></img>';
         case 4:
             if(hrdck==true && pntn==4){
-                return '<img src="./src/hw4.png" width="95%" height="95%" class="scrimg"></img>';
+                return '<img src="./src/hw4.png" width="85%" height="85%" class="scrimg"></img>';
             }else if(pntn==4){
-                return '<img src="./src/w4.png" width="95%" height="95%" class="scrimg"></img>';
+                return '<img src="./src/w4.png" width="85%" height="85%" class="scrimg"></img>';
             }else if(hrdck==true){
-                return '<img src="./src/h4.png" width="95%" height="95%" class="scrimg"></img>';
+                return '<img src="./src/h4.png" width="85%" height="85%" class="scrimg"></img>';
             }
             return '<img src="./src/4.png" class="scrimg"></img>';
         case 5:
