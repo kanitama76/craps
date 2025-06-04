@@ -190,10 +190,10 @@ function getimg(scr,hrdck,pntn){
         case 2:
             return '<img src="./src/2.png" width="80%" height="80%"　class="scrimg"></img>';
         case 3:
-            return '<img src="./src/3.png" class="scrimg"></img>';
+            return '<img src="./src/3.png" width="90%" height="90%" class="scrimg"></img>';
         case 4:
             if(hrdck==true && pntn==4){
-                return '<img src="./src/hw4.png" class="scrimg"></img>';
+                return '<img src="./src/hw4.png width="95%" height="95%"" class="scrimg"></img>';
             }else if(pntn==4){
                 return '<img src="./src/w4.png" class="scrimg"></img>';
             }else if(hrdck==true){
