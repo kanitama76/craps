@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <title>craps score report</title>
+    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/my-sheet.css">
+    <script src="./js/myjs.js"></script>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class=" row" style="height: 350px;">
+            <div class="col-10 border border-dark sizefix" style="height: 350px;">
+                <div class="table-responsive" >
+                    <table id="score_table" class="table table-bordered">
+                        <tr><td class="play"></td><td></td><td></td><td></td><td></td><td class="line"></td>
+                            <td ></td><td></td><td></td><td></td><td class="line"></td><td></td><td></td><td></td><td></td><td class="end"></td></tr>
+                        <tr><td class="play"></td><td></td><td></td><td></td><td></td><td class="line"></td>
+                            <td ></td><td></td><td></td><td></td><td class="line"></td><td></td><td></td><td></td><td></td><td class="end"></td></tr>
+                        <tr><td class="play"></td><td></td><td></td><td></td><td></td><td class="line"></td>
+                            <td ></td><td></td><td></td><td></td><td class="line"></td><td></td><td></td><td></td><td></td><td class="end"></td></tr>
+                        <tr><td class="play"></td><td></td><td></td><td></td><td></td><td class="line"></td>
+                            <td ></td><td></td><td></td><td></td><td class="line"></td><td></td><td></td><td></td><td></td><td class="end"></td></tr>
+                        <tr><td class="play"></td><td></td><td></td><td></td><td></td><td class="line"></td>
+                            <td ></td><td></td><td></td><td></td><td class="line"></td><td></td><td></td><td></td><td></td><td class="end"></td></tr>
+                        <tr><td class="play"></td><td></td><td></td><td></td><td></td><td class="line"></td>
+                            <td ></td><td></td><td></td><td></td><td class="line"></td><td></td><td></td><td></td><td></td><td class="end"></td></tr> 
+                        <tr><td class="play"></td><td></td><td></td><td></td><td></td><td class="line"></td>
+                            <td ></td><td></td><td></td><td></td><td class="line"></td><td></td><td></td><td></td><td></td><td class="end"></td></tr>
+                        <tr><td class="play"></td><td></td><td></td><td></td><td></td><td class="line"></td>
+                            <td ></td><td></td><td></td><td></td><td class="line"></td><td></td><td></td><td></td><td></td><td class="end"></td></tr>
+                        <tr><td class="play"></td><td></td><td></td><td></td><td></td><td class="line"></td>
+                            <td ></td><td></td><td></td><td></td><td class="line"></td><td></td><td></td><td></td><td></td><td class="end"></td></tr>
+                        <tr><td class="play"></td><td></td><td></td><td></td><td></td><td class="line"></td>
+                            <td ></td><td></td><td></td><td></td><td class="line"></td><td></td><td></td><td></td><td></td><td class="end"></td></tr>
+                        <tr><td class="play"></td><td></td><td></td><td></td><td></td><td class="line"></td>
+                            <td ></td><td></td><td></td><td></td><td class="line"></td><td></td><td></td><td></td><td></td><td class="end"></td></tr>
+                        <tr><td class="play"></td><td></td><td></td><td></td><td></td><td class="line"></td>
+                            <td ></td><td></td><td></td><td></td><td class="line"></td><td></td><td></td><td></td><td></td><td class="end"></td></tr>
+                        <tr><td class="play"></td><td></td><td></td><td></td><td></td><td class="line"></td>
+                            <td ></td><td></td><td></td><td></td><td class="line"></td><td></td><td></td><td></td><td></td><td class="end"></td></tr>
+                        <tr><td class="play"></td><td></td><td></td><td></td><td></td><td class="line"></td>
+                            <td ></td><td></td><td></td><td></td><td class="line"></td><td></td><td></td><td></td><td></td><td class="end"></td></tr>
+                        <tr><td class="play"></td><td></td><td></td><td></td><td></td><td class="line"></td>
+                            <td ></td><td></td><td></td><td></td><td class="line"></td><td></td><td></td><td></td><td></td><td class="end"></td></tr>
+                        <tr><td class="play"></td><td></td><td></td><td></td><td></td><td class="line"></td>
+                            <td ></td><td></td><td></td><td></td><td class="line"></td><td></td><td></td><td></td><td></td><td class="end"></td></tr>
+                        <tr><td class="play"></td><td></td><td></td><td></td><td></td><td class="line"></td>
+                            <td ></td><td></td><td></td><td></td><td class="line"></td><td></td><td></td><td></td><td></td><td class="end"></td></tr>
+                        <tr><td class="play"></td><td></td><td></td><td></td><td></td><td class="line"></td>
+                            <td ></td><td></td><td></td><td></td><td class="line"></td><td></td><td></td><td></td><td></td><td class="end"></td></tr>
+                        <tr><td class="play"></td><td></td><td></td><td></td><td></td><td class="line"></td>
+                            <td ></td><td></td><td></td><td></td><td class="line"></td><td></td><td></td><td></td><td></td><td class="end"></td></tr>
+                        <tr><td class="play"></td><td></td><td></td><td></td><td></td><td class="line"></td>
+                            <td ></td><td></td><td></td><td></td><td class="line"></td><td></td><td></td><td></td><td></td><td class="end"></td></tr>
+                        <tr><td class="play"></td><td></td><td></td><td></td><td></td><td class="line"></td>
+                            <td ></td><td></td><td></td><td></td><td class="line"></td><td></td><td></td><td></td><td></td><td class="end"></td></tr>
+                        <tr><td class="play"></td><td></td><td></td><td></td><td></td><td class="line"></td>
+                            <td ></td><td></td><td></td><td></td><td class="line"></td><td></td><td></td><td></td><td></td><td class="end"></td></tr>
+                        <tr><td class="play"></td><td></td><td></td><td></td><td></td><td class="line"></td>
+                            <td ></td><td></td><td></td><td></td><td class="line"></td><td></td><td></td><td></td><td></td><td class="end"></td></tr>
+                        <tr><td class="play"></td><td></td><td></td><td></td><td></td><td class="line"></td>
+                            <td ></td><td></td><td></td><td></td><td class="line"></td><td></td><td></td><td></td><td></td><td class="end"></td></tr>
+                        <tr><td class="play"></td><td></td><td></td><td></td><td></td><td class="line"></td>
+                            <td ></td><td></td><td></td><td></td><td class="line"></td><td></td><td></td><td></td><td></td><td class="end"></td></tr>
+                        <tr><td class="play"></td><td></td><td></td><td></td><td></td><td class="line"></td>
+                            <td ></td><td></td><td></td><td></td><td class="line"></td><td></td><td></td><td></td><td></td><td class="end"></td></tr>                            
+                        <tr><td class="play"></td><td></td><td></td><td></td><td></td><td class="line"></td>
+                            <td ></td><td></td><td></td><td></td><td class="line"></td><td></td><td></td><td></td><td></td><td class="end"></td></tr>       
+                        <tr><td class="play"></td><td></td><td></td><td></td><td></td><td class="line"></td>
+                            <td ></td><td></td><td></td><td></td><td class="line"></td><td></td><td></td><td></td><td></td><td class="end"></td></tr>
+                        <tr><td class="play"></td><td></td><td></td><td></td><td></td><td class="line"></td>
+                            <td ></td><td></td><td></td><td></td><td class="line"></td><td></td><td></td><td></td><td></td><td class="end"></td></tr>
+                        <tr><td class="play"></td><td></td><td></td><td></td><td></td><td class="line"></td>
+                            <td ></td><td></td><td></td><td></td><td class="line"></td><td></td><td></td><td></td><td></td><td class="end"></td></tr>
+                        <tr><td class="play"></td><td></td><td></td><td></td><td></td><td class="line"></td>
+                            <td ></td><td></td><td></td><td></td><td class="line"></td><td></td><td></td><td></td><td></td><td class="end"></td></tr>                            
+                        <tr><td class="play"></td><td></td><td></td><td></td><td></td><td class="line"></td>
+                            <td ></td><td></td><td></td><td></td><td class="line"></td><td></td><td></td><td></td><td></td><td class="end"></td></tr>
+                        <tr><td class="play"></td><td></td><td></td><td></td><td></td><td class="line"></td>
+                            <td ></td><td></td><td></td><td></td><td class="line"></td><td></td><td></td><td></td><td></td><td class="end"></td></tr>
+                        <tr><td class="play"></td><td></td><td></td><td></td><td></td><td class="line"></td>
+                            <td ></td><td></td><td></td><td></td><td class="line"></td><td></td><td></td><td></td><td></td><td class="end"></td></tr>
+                        </table>
+                  </div>
+            </div>
+
+            <div class="col-2 border border-dark">
+                <p>平均連続数</p>
+                <div id="ave_c">
+                    0回
+                </div>
+                <p>最高連続数</p>
+                <div id="max_c">
+                    0回
+                </div>
+                <p>最高Winner回数</p>
+                <div id="win_t">
+                    0回
+                </div>
+                <p>7 out 率</p>
+                <div id="sev_p">
+                    0%
+                </div>
+                <button onclick="detail()" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Detail
+                  </button>
+                <button onclick="playerchoise()" type="button" class="btn btn-primary" >
+                    プレイヤー選択
+                  </button>
+                
+            </div>
+        </div>
+        <div class="row m-1">
+            <div class="col-6">
+                <p>Player</p>
+                <div class="btn-group d-flex" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check" name="btnradio1" id="btnradio11" value="btnradio11" autocomplete="off" checked>
+                    <label class="btn btn-outline-primary" for="btnradio11" id="playerLabel0">Player A</label>
+                    <input type="radio" class="btn-check" name="btnradio1" id="btnradio12" value="btnradio12" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio12" id="playerLabel1">Player B</label>
+                    <input type="radio" class="btn-check" name="btnradio1" id="btnradio13" value="btnradio13" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio13" id="playerLabel2">Player C</label>
+                    <input type="radio" class="btn-check" name="btnradio1" id="btnradio14" value="btnradio14" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio14" id="playerLabel3">Player D</label>
+                </div>
+                <p>Point number</p>
+                <div class="btn-group d-flex" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check" name="btnradio2" id="btnradio21" value="btnradio21"autocomplete="off" checked>
+                    <label class="btn btn-outline-primary" for="btnradio21">4</label>
+                    <input type="radio" class="btn-check" name="btnradio2" id="btnradio22" value="btnradio22"autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio22">5</label>
+                    <input type="radio" class="btn-check" name="btnradio2" id="btnradio23" value="btnradio23"autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio23">6</label>
+                    <input type="radio" class="btn-check" name="btnradio2" id="btnradio24" value="btnradio24"autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio24">8</label>
+                    <input type="radio" class="btn-check" name="btnradio2" id="btnradio25" value="btnradio25"autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio25">9</label>
+                    <input type="radio" class="btn-check" name="btnradio2" id="btnradio26" value="btnradio26"autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio26">10</label>
+                </div>
+            </div>
+            <div class="col-6 grid gap-0 row-gap-3 ">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <div id="hb">
+                        <button type="button" class="me-auto btn btn-outline-primary btn-custom-size3" name="but_hard" data-bs-toggle="button">Hardway</button>
+                    </div>
+                    <button onclick="rest()" class="ms-auto btn btn-primary btn-custom-size2" type="button">Reset</button>
+                    <button onclick="back()" class="ms-auto btn btn-primary btn-custom-size2" type="button">Back</button>
+                </div>
+                <div>-</div>
+                <div class="d-grid gap-2 d-flex m-1">
+                    <div class="col-2 ">
+                        <button onclick="myFunction(4)" class="btn btn-primary btn-custom-size" type="button">4</button>
+                    </div>
+                    <div class="col-2 ">
+                        <button onclick="myFunction(5)" class="btn btn-primary btn-custom-size"  type="button">5</button>
+                    </div>
+                    <div class="col-2 ">
+                        <button onclick="myFunction(6)" class="btn btn-primary btn-custom-size"  type="button">6</button>
+                    </div>
+                    <div class="col-2 ">
+                        <button onclick="myFunction(8)" class="btn btn-primary btn-custom-size"  type="button">8</button>
+                    </div>
+                    <div class="col-2 ">
+                        <button onclick="myFunction(9)" class="btn btn-primary btn-custom-size"  type="button">9</button>
+                    </div>
+                    <div class="col-2 ">
+                        <button onclick="myFunction(10)" class="btn btn-primary btn-custom-size"  type="button">10</button>
+                    </div>
+                </div>
+                <div class="d-grid gap-2 d-flex m-1">
+                    <div class="col-2 ">
+                        <button onclick="myFunction(2)" class="btn btn-warning btn-custom-size" type="button">2</button>
+                    </div>
+                    <div class="col-2 ">
+                        <button onclick="myFunction(3)" class="btn btn-warning btn-custom-size"  type="button">3</button>
+                    </div>
+                    <div class="col-2 ">
+                        <button onclick="myFunction(11)" class="btn btn-success btn-custom-size"  type="button">11</button>
+                    </div>
+                    <div class="col-2 ">
+                        <button onclick="myFunction(12)" class="btn btn-warning btn-custom-size"  type="button">12</button>
+                    </div>
+                    <div class="col-2 ">
+
+                    </div>
+                    <div class="col-2 ">
+                        <button onclick="myFunction(7)" class="btn btn-danger btn-custom-size"  type="button">7</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Detial</h5>
+              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class=" row" style="height: 600px;">
+                <div class="col-3">
+                    <p>Player A</p>
+                    <p>平均連続数</p>
+                    <div id="aave_c">
+                        0回
+                    </div><br>
+                    <p>最高連続数</p>
+                    <div id="amax_c">
+                        0回
+                    </div><br>
+                    <p>Winner率</p>
+                    <div id="awin_p">
+                        0%
+                    </div><br>
+                    <p>最高Winner回数</p>
+                    <div id="awin_t">
+                        0回
+                    </div><br>
+                    <p>7 out 率</p>
+                    <div id="asev_p">
+                        0%
+                    </div><br>
+                </div>
+                <div class="col-3">
+                    <p>Player B</p>
+                    <p>平均連続数</p>
+                    <div id="bave_c">
+                        0回
+                    </div><br>
+                    <p>最高連続数</p>
+                    <div id="bmax_c">
+                        0回
+                    </div><br>
+                    <p>Winner率</p>
+                    <div id="bwin_p">
+                        0%
+                    </div><br>
+                    <p>最高Winner回数</p>
+                    <div id="bwin_t">
+                        0回
+                    </div><br>
+                    <p>7 out 率</p>
+                    <div id="bsev_p">
+                        0%
+                    </div><br>
+                </div>
+                <div class="col-3">
+                    <p>Player C</p>
+                    <p>平均連続数</p>
+                    <div id="cave_c">
+                        0回
+                    </div><br>
+                    <p>最高連続数</p>
+                    <div id="cmax_c">
+                        0回
+                    </div><br>
+                    <p>Winner率</p>
+                    <div id="cwin_p">
+                        0%
+                    </div><br>
+                    <p>最高Winner回数</p>
+                    <div id="cwin_t">
+                        0回
+                    </div><br>
+                    <p>7 out 率</p>
+                    <div id="csev_p">
+                        0%
+                    </div><br>
+                </div>
+                <div class="col-3">
+                    <p>Player D</p>
+                    <p>平均連続数</p>
+                    <div id="dave_c">
+                        0回
+                    </div><br>
+                    <p>最高連続数</p>
+                    <div id="dmax_c">
+                        0回
+                    </div><br>
+                    <p>Winner率</p>
+                    <div id="dwin_p">
+                        0%
+                    </div><br>
+                    <p>最高Winner回数</p>
+                    <div id="dwin_t">
+                        0回
+                    </div><br>
+                    <p>7 out 率</p>
+                    <div id="dsev_p">
+                        0%
+                    </div><br>
+                </div>
+              </div>
+              <canvas id="barchart"></canvas>
+
+             </div>
+          </div>
+        </div>
+      </div>
+    <div class="modal fade" id="playerModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">プレイヤーを選択（最大6人）</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="閉じる"></button>
+      </div>
+      <div class="modal-body" id="playerModalBody">
+        <!-- チェックボックスリストをここに生成 -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" onclick="confirmSelection()">決定</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+.btn-custom-size {
+  width: 90%;
+  height: 50px;
+  padding: 10px 20px;
+  font-size: large;
+}
+.btn-custom-size2 {
+  width: 30%;
+  height: 50px;
+  padding: 10px 20px;
+}
+.btn-custom-size3 {
+  width: 150px;
+  height: 50px;
+  padding: 10px 20px;
+}
+
+
+.sizefix{
+  overflow-y: auto;
+}
+table.table{
+  border-top-color: black;
+  border-bottom-color: black;
+}
+
+td.line{
+  border-right-color: black;
+}
+
+td.end{
+  border-right-color: black;
+}
+
+tr{
+  height: 50px;
+}
+
+td{
+  width: 50px;
+  text-align: center;
+  
+}
+
+td.play{
+  width: 200px;
+  border-left-color: black;
+  border-right-color: black;
+
+}
+img.scrimg{
+  height: 40px;
+  width: 40px;
+}
+
+li {
+  display:  inline-block;
+  width:  100px;
+  text-align:  center;
+}
+
+.bar {
+  width:  20px;
+  height: 100px;
+  margin:  auto;
+  background-color: black;
+}
